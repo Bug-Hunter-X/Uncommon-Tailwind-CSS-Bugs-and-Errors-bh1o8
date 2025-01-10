@@ -1,0 +1,29 @@
+/* Solutions to the issues presented in bug.css. These examples show how to handle conflicting classes, purge unused styles, correctly configure plugins, and resolve conflicts from using multiple utility classes on the same element.  Remember to adapt these solutions to your specific use case. */
+
+/* Handle conflicting classes by being explicit about specificity or using the !important flag (use cautiously). */
+.class-a {
+  background-color: red !important; /* More specific, thus overrides */
+}
+
+.class-b {
+  background-color: blue;
+}
+
+/* Purge unused styles in your production build. Consult your build process documentation for how to do this correctly, usually via a configuration file.  Tailwind provides purge configuration options in its configuration file (tailwind.config.js)  */
+
+/* Correctly configure plugins according to the plugin documentation. */
+
+/* Avoid using conflicting utility classes on the same element. Instead, combine styles to achieve the desired effect. For example: */
+.my-class {
+  /* Correct approach */
+  @apply text-center p-4 bg-gray-100 rounded-lg shadow-md;
+}
+
+/* Incorrect approach */
+/*.incorrect-approach {
+  @apply text-center;
+  @apply p-4;
+  @apply bg-gray-100;
+  @apply rounded-lg;
+  @apply shadow-md;
+}*/
